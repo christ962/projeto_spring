@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+      <head>
+         <title>Crud Aluno</title>
+           <meta http-equiv="Content-type" content="text/html"; charset="UTF-8">
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          
+            <style type="text/css">
+              table,th,td{
+               border:1px solidblack;
+               border-collapse:collapse;
+              }
+            </style>
+      </head>
+      <body>
+        <a href="insert">Inserir Novo"</a>| <a href="read">Ver Todos</a> <br> <br>
+        <table style="width:100%">
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Excluir</th>
+          <th>Alterar?</th>
+        </tr>
+        <tr th:each="aluno :${alunos}">
+        <td th:text="${aluno.id}"></td>
+        <td th:text="${aluno.nome}"></td>
+        <td th:text="${aluno.email}"></td>
+        <td><a th:href="@{/delete(id=${aluno.id})}">Deletar</a></td>
+        <td><a th:href="@{/update(id=${aluno.id})}">Aterar</a></td>
+        </tr>
+        </table>
+       </body>
+  </html>

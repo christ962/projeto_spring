@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Ver Todos</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body th:each="aluno:${alunos}">
+<span th:text="${'ID:'+ aluno.id}"></span><br>
+<span th:text="${'Nome:'+ aluno.nome}"></span><br>
+<span th:text="${'Email:'+ aluno.emial}"></span><br>
+<br>
+<br>
+
+
+
+</body>
+
+
+
+</html>
